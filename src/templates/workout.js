@@ -11,10 +11,13 @@ export default ({ data }) => {
       <h1>{title}</h1>
       <h2>Set: {set + 1}</h2>
       <div>
-        {excercises.map(({ title, reps }) => (
+        {excercises.map(({ title, reps, rest }) => (
           <div>
-            <div>{title}</div>
-            <div>Reps: {reps[set]}</div>
+            <div>
+              <strong>{title}</strong>
+            </div>
+            <div>Reps: {reps[set] ? reps[set] : 0}</div>
+            <div>Rest: {rest}</div>
           </div>
         ))}
       </div>
@@ -38,6 +41,7 @@ export const pageQuery = graphql`
           title
           notes
           reps
+          rest
         }
       }
     }
