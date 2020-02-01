@@ -1,7 +1,7 @@
 import React from "react"
 import { StoreContainer } from "../state/store"
 
-export default ({ title, reps, rest }) => {
+export default ({ title, reps, rest, notes }) => {
   const { excercise, excercises, set } = StoreContainer.useContainer()
   const isActive = excercises[excercise].title === title
 
@@ -16,6 +16,11 @@ export default ({ title, reps, rest }) => {
       <div style={{ color: isActive ? "red" : "black" }}>
         <strong>{title}</strong>
         <div>Rest: {rest}</div>
+        {notes && (
+          <div>
+            <small>{notes} </small>
+          </div>
+        )}
       </div>
       <div style={{ display: "flex" }}>
         {reps.map((cant, i) => (
