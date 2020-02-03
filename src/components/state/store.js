@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { createContainer } from "unstated-next"
-import { getAmountOfReps, hasMoreSets } from "../../utils"
+import { getAmountOfReps } from "../../utils"
 
 function useCounter(initialState = []) {
   let [excercise, setExcercise] = useState(0)
@@ -10,6 +10,7 @@ function useCounter(initialState = []) {
   const previousExcercise = excercises[excercise - 1] || excercises[0]
   const maxExcercises = Object.values(excercises).length - 1
   const isFirst = excercise === 0 && set === 0
+  const hasMoreSets = set < getAmountOfReps(currentExcercise) - 1
   const isLast = excercise === maxExcercises && !hasMoreSets
 
   let decrement = () => {
