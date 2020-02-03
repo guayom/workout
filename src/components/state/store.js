@@ -15,6 +15,7 @@ function useCounter(initialState = []) {
   let [set, setSet] = useState(0)
   const [excercises, setExcercises] = useState(initialState)
   const currentExcercise = excercises[excercise]
+  const previousExcercise = excercises[excercise - 1] || excercises[0]
   const hasMoreSets = verfifyHasMoreSets(currentExcercise, set)
   const maxExcercises = Object.values(excercises).length - 1
   const isFirst = excercise === 0 && set === 0
@@ -24,7 +25,7 @@ function useCounter(initialState = []) {
     // If set is 0, move to previous set
     if (set === 0 && excercise > 0) {
       setExcercise(excercise - 1)
-      setSet(getAmountOfReps(currentExcercise) - 1)
+      setSet(getAmountOfReps(previousExcercise) - 1)
     } else {
       setSet(set - 1)
     }
