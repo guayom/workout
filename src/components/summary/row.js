@@ -29,7 +29,7 @@ export default ({ title, reps, rest, notes }) => {
               width: "2em",
               marginLeft: "2px",
               textAlign: "right",
-              fontWeight: i === set && isActive ? "bold" : "normal",
+              color: i === set && isActive ? "red" : "black",
             }}
             key={title + i}
           >
