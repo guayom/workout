@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { ExcerciseList } from "../components/summary"
 import { StoreContainer } from "../components/state/store"
 import ProgressButtons from "../components/progress-buttons"
+import TotalSets from "../components/total-sets"
 
 export default ({ data }) => {
   const { markdownRemark } = data
@@ -13,6 +14,7 @@ export default ({ data }) => {
       <StoreContainer.Provider initialState={excercises}>
         <h1>{title}</h1>
         <ExcerciseList />
+        <TotalSets />
         <ProgressButtons />
       </StoreContainer.Provider>
     </Layout>
