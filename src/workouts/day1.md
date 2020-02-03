@@ -1,7 +1,7 @@
 ---
-path: "/workouts/workout-1"
+path: "/workouts/day-1"
 date: "2020-01-30"
-title: "Workout 1"
+title: "Day 1"
 excercises:
   - title: Leg Press
     rest: 2+

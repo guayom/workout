@@ -1,7 +1,7 @@
 ---
-path: "/workouts/workout-2"
+path: "/workouts/day-2"
 date: "2020-01-30"
-title: "Workout 2"
+title: "Day 2"
 excercises:
   - title: 	Overhead BB Press
     rest: 2+
